@@ -1,6 +1,9 @@
 require 'sinatra'
+require "sinatra/activerecord"
 
 #RACK_ENV=production rackup config.ru
+set :database, "sqlite3:///to_do_class_app.db"
+
 get "/error" do
 	"whoopsies try again"
 end
