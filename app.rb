@@ -18,8 +18,19 @@ get "/addition" do
 	erb :"fav_mov/addition_index"
 end
 
+# put "/edit/:id" do
+# 	@favs = FavoriteMovie.find(params[:id])
+# end
+
+
+	get "/edit/:id" do
+		@movie_to_remove = FavoriteMovie.find(params[:id])
+		erb :"fav_mov/show"
+	end
+
+
 get "/remove" do
-	# @favs = FavoriteMovie.find(params[:id])
+	@favs = FavoriteMovie.all
 	erb :"fav_mov/remove_index"
 end
 
