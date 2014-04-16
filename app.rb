@@ -18,16 +18,13 @@ get "/addition" do
 	erb :"fav_mov/addition_index"
 end
 
-
 get "/remove" do
-	@favs = FavoriteMovie.find(params[:id])
+	# @favs = FavoriteMovie.find(params[:id])
 	erb :"fav_mov/remove_index"
 end
 
 post "/add_post" do
-	# name = params[:mov_name]
-	# description = params[:mov_desc]
-	movie = FavoriteMovie.new(params[:id])
+	movie = FavoriteMovie.new
 	movie.title = params[:mov_name]
 	movie.description = params[:mov_desc]
 	movie.save
