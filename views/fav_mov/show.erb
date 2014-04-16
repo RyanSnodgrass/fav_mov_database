@@ -11,10 +11,10 @@
     <title>Starter Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="./css/starter-template.css" rel="stylesheet">
+    <link href="../../css/starter-template.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -52,17 +52,20 @@
     <div class="container">
 
       <div class="starter-template">
-
-        <h1><%= @movie_to_remove.title %></h1>
+				<h1><%= @movie_to_remove.title %></h1>
         <p class="lead"><%= @movie_to_remove.description%></p>
+        <form action="/edit/<%=@movie_to_remove.id%>" method="post">
+				  <input type="hidden" name="_method" value="delete" />
+				  <input type="submit" value="Delete" />
+				</form>
       </div>
 
 
-    </div><!-- /.container -->
+    </div><!-- /.container --!>
 
 
     <!-- Bootstrap core JavaScript
-    ================================================== -->
+    ==================================================
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>

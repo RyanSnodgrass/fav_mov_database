@@ -28,6 +28,11 @@ end
 		erb :"fav_mov/show"
 	end
 
+ delete "/edit/:id" do
+ 	@movie_to_remove = FavoriteMovie.find(params[:id])
+ 	@movie_to_remove.delete
+ 	redirect "./favorite_movies"
+ end
 
 get "/remove" do
 	@favs = FavoriteMovie.all
