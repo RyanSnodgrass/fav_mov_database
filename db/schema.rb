@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140415195305) do
+ActiveRecord::Schema.define(version: 20140416153013) do
+
+  create_table "deers", force: true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.boolean  "tasty",    default: false
+    t.datetime "birthday"
+    t.string   "color",    default: "brown"
+    t.boolean  "huntable", default: true
+  end
 
   create_table "favorite_movies", force: true do |t|
     t.string   "title"

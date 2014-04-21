@@ -60,3 +60,6 @@ class FavoriteMovie < ActiveRecord::Base
 		## validations
 	end
 end
+
+class Deer < ActiveRecord::Base
+end
